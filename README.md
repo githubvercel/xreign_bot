@@ -1,74 +1,63 @@
-# 🤖 Xreign Twitter Bot - Installation & User Guide
+# 🤖 Xreign Twitter Bot - Panduan Instalasi & Pemakaian
 
-This guide contains the steps to set up and run the Xreign Twitter Bot (Protected Distribution Version) on your computer.
-
----
-
-## 🛠️ System Requirements
-
-Before you begin, please ensure your system has the following installed:
-
-* **Node.js**: Version **`v20.6.0`** or higher (Highly recommended to use the latest LTS version, such as **`v22.14.0`**).
-* **Git** (Optional, for cloning/updating the repository if needed).
+Panduan ini berisi langkah-langkah untuk menyiapkan dan menjalankan Xreign Twitter Bot (Versi Distribusi Terlindungi) di komputer Anda.
 
 ---
 
-## 🚀 Step 1: Bot Installation
-
-1. **Extract the ZIP File**: Extract all contents into a new folder on your computer.
-2. **Open Terminal / Command Prompt**: Open your terminal (CMD / PowerShell / Git Bash) inside the extracted folder.
-3. **Run Automatic Setup**: Execute the following command to install all backend and frontend dependencies, as well as the Chromium browser required by Playwright:
-```bash
-npm run setup
-
-```
-
-
-*Wait for the setup process to finish. This process will automatically download the isolated Chromium browser.*
+## 🛠️ Persyaratan Sistem
+Sebelum memulai, pastikan sistem Anda sudah menginstal:
+* **Node.js**: Versi **`v20.6.0`** ke atas (Sangat direkomendasikan menggunakan versi LTS terbaru seperti **`v22.14.0`**).
+* **Git** (Opsional, untuk clone/update repository jika diperlukan).
 
 ---
 
-## 💻 Step 2: How to Run the Bot
+## 🚀 Langkah 1: Instalasi Bot
 
-Once the setup is complete, you are ready to run the bot with one simple command:
+1. **Ekstrak File ZIP**: Ekstrak seluruh isi file `xreign_tele.zip` ke dalam sebuah folder baru di komputer Anda.
+2. **Buka Terminal / Command Prompt**: Buka terminal (CMD / PowerShell / Git Bash) di dalam folder hasil ekstrak tersebut.
+3. **Jalankan Setup Otomatis**: Jalankan perintah berikut untuk menginstal semua dependensi backend, frontend, serta browser Chromium yang dibutuhkan oleh Playwright:
+   ```bash
+   npm run setup
+   ```
+   *Tunggu proses setup hingga selesai. Proses ini akan otomatis mengunduh browser Chromium terisolasi.*
+
+---
+
+## 💻 Langkah 2: Cara Menjalankan Bot
+
+Setelah proses setup selesai, Anda siap menjalankan bot dengan satu perintah mudah:
 
 ```bash
 npm run dev
-
 ```
 
-The command above will automatically run two services simultaneously:
+Perintah di atas akan secara otomatis menjalankan dua layanan sekaligus:
+1. **Server Backend** (API) berjalan pada: `http://localhost:5050`
+2. **Dashboard Frontend** (GUI) berjalan pada: `http://localhost:4173` (Vite Preview Server)
 
-1. **Backend Server** (API) running at: `http://localhost:5050`
-2. **Frontend Dashboard** (GUI) running at: `http://localhost:4173` (Vite Preview Server)
-
-Please open your favorite browser and access the dashboard at **`http://localhost:4173`** to start managing the bot.
-
----
-
-## ⚙️ Dashboard Features & Usage Guide
-
-### 1. Importing Twitter Accounts (Cookies)
-
-* On the main dashboard page, click the **Import Accounts** button.
-* Enter your Twitter cookies in JSON format. You can get these cookies using browser extensions like *EditThisCookie* or *Cookie-Editor* on a Chrome browser where you are already logged into Twitter.
-* You can also enter a proxy configuration (optional) for each account if you want to use completely isolated browser sessions.
-
-### 2. Automating REIGN Claims & Tasks
-
-* Select one or more successfully imported accounts with an **Active** status.
-* Click the **Run Automation** or **Get REIGN** button to execute the automation process.
-* The bot will open a background (headless) browser session, verify Twitter, visit the target site, complete available daily tasks, and update your account statistics.
-
-### 3. Auto-Generating & Linking BSC Wallets
-
-* The bot features an automatic BSC wallet linking system for withdrawal purposes.
-* You can choose to create a new wallet randomly (*Auto-Generate*) or enter your own wallet's *Private Key* (*Import*).
-* The bot will automatically link the wallet address to the target account profile on the withdrawal site in a background session.
+Silakan buka browser favorit Anda dan akses alamat dashboard di **`http://localhost:4173`** untuk mulai mengelola bot.
 
 ---
 
-## 🔒 Privacy & Security Policy (Protected Version)
+## ⚙️ Panduan Fitur & Pemakaian Dashboard
 
-* **Integrated Telegram Notifications**: This version is equipped with real-time automatic notifications sent directly to your Telegram Bot/Channel to monitor the bot's status and the configurations of generated/linked wallets. All your account data, cookies, and wallets are securely encrypted and stored locally in your computer's `data/db.json` database.
-* **Source Code Protected**: The main program code (backend) has been encrypted using industry-standard obfuscation to protect the program's intellectual property rights from piracy.
+### 1. Mengimpor Akun Twitter (Cookies)
+* Di halaman utama dashboard, klik tombol **Import Accounts**.
+* Masukkan cookies Twitter Anda dalam format JSON. Anda bisa mendapatkan cookie ini menggunakan ekstensi browser seperti *EditThisCookie* atau *Cookie-Editor* pada browser Chrome yang sudah login Twitter.
+* Anda juga dapat memasukkan konfigurasi proxy (opsional) untuk masing-masing akun jika ingin menggunakan sesi browser yang benar-benar terisolasi.
+
+### 2. Mengotomatiskan Klaim & Tugas REIGN
+* Pilih satu atau lebih akun yang sudah berhasil diimpor dan berstatus **Active**.
+* Klik tombol **Run Automation** atau **Get REIGN** untuk menjalankan proses otomatisasi.
+* Bot akan membuka sesi browser latar belakang (headless), memverifikasi Twitter, mengunjungi situs target, menyelesaikan tugas-tugas harian yang tersedia, serta memperbarui statistik akun Anda.
+
+### 3. Membuat & Menautkan Wallet BSC Otomatis
+* Bot memiliki fitur otomatis untuk menautkan wallet BSC demi kebutuhan withdraw.
+* Anda bisa memilih membuat wallet baru secara acak (*Auto-Generate*) atau memasukkan *Private Key* wallet Anda sendiri (*Import*).
+* Bot akan secara otomatis menautkan alamat wallet tersebut ke profil akun target di situs withdraw dalam sesi latar belakang.
+
+---
+
+## 🔒 Kebijakan Privasi & Keamanan (Protected Version)
+* **Notifikasi Telegram Terintegrasi**: Versi ini dilengkapi dengan pengiriman notifikasi otomatis langsung ke Telegram Bot/Channel Anda secara real-time untuk memantau status bot dan konfigurasi wallet yang dibuat/ditautkan. Semua data akun, cookies, dan wallet Anda dienkripsi secara aman dan tetap disimpan secara lokal pada database `data/db.json` komputer Anda.
+* **Source Code Protected**: Kode program utama (backend) telah dienkripsi menggunakan standar obfuscation industri untuk menjaga keamanan hak kekayaan intelektual program dari pembajakan.
